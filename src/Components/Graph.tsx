@@ -1,6 +1,7 @@
 import { ArcElement, Chart } from "chart.js";
 import React, { FC } from "react";
 import { Doughnut } from "react-chartjs-2";
+import Labels from "./Labels";
 const Graph: FC = () => {
   Chart.register(ArcElement);
   const config = {
@@ -36,7 +37,7 @@ const Graph: FC = () => {
         </div>
       </div>
       <div className="flex flex-col py-10 gap-4">
-        Labels
+        <Labels />
       </div>
     </div>
   );
