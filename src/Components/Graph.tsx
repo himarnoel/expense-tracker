@@ -2,7 +2,13 @@ import React, { FC } from 'react'
 
 const Graph:FC = () => {
   return (
-    <div>Graph</div>
+    <div className='flex justify-content max-w-xs mx-auto'>
+        <div className="item">
+            <div className="chart relative">
+                chart
+            </div>
+        </div>
+    </div>
   )
 }
 
