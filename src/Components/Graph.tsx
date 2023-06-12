@@ -35,7 +35,9 @@ const Graph: FC = () => {
           </h3>
         </div>
       </div>
-      <div className="flex flex-col py-10 gap-4"></div>
+      <div className="flex flex-col py-10 gap-4">
+        Labels
+      </div>
     </div>
   );
 };
