@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
+import Graph from './Components/Graph';
 
 function App() {
   const [count, setCount] = useState<number>(0)
@@ -14,7 +15,7 @@ function App() {
     <div className="grid md:grid-cols-2 gap-4"></div>
 
     {/* Graphs */}
-    
+    <Graph />
     </div>
    </div>
   )
