@@ -1,8 +1,34 @@
 import { FC } from "react";
+import { useForm, Resolver } from "react-hook-form";
 
 interface FormProps {}
 
 const Form: FC<FormProps> = () => {
+  type FormValues = {
+    expenses: string;
+    type: string;
+    amout: number;
+  };
+
+  const resolver: Resolver<FormValues> = async (values) => {
+    return {
+      values: values.expenses ? values : {},
+      errors: !values.expenses
+        ? {
+            expenses: {
+              type: "required",
+              message: "This is required.",
+            },
+          }
+        : {},
+    };
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver });
   return (
     <>
       <div className="form max-w-sm mx-auto w-96">
@@ -14,8 +40,9 @@ const Form: FC<FormProps> = () => {
                 type="text"
                 placeholder="Salary, House Rent, SIP"
                 className="form-input"
+                {...register("expenses")}
               />
-              <select id="" className="form-input">
+              <select id="" className="form-input" {...register("type")}>
                 <option value="Investment" defaultValue="Investment">
                   Investment
                 </option>
@@ -25,8 +52,9 @@ const Form: FC<FormProps> = () => {
               <div className="input-group">
                 {" "}
                 <input
-                  type="text"
+                  type="number"
                   placeholder="amount"
+                  {...register("amout")}
                   className="form-input"
                 />
               </div>
