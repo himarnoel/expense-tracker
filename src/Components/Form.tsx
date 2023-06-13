@@ -29,11 +29,13 @@ const Form: FC<FormProps> = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({ resolver });
+  const onSubmit = handleSubmit((data) => console.log(data));
   return (
     <>
       <div className="form max-w-sm mx-auto w-96">
         <h1 className="font-bold pb-4 text-xl">Transaction</h1>
-        <form action="" id="form">
+        {}
+        <form action="" id="form" onSubmit={onSubmit}>
           <div className="grid gap-4">
             <div className="input-group">
               <input
