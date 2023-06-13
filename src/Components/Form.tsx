@@ -19,10 +19,10 @@ const Form: FC<FormProps> = () => {
                 <option value="Investment" defaultValue="Investment">
                   Investment
                 </option>
-                <option value="Investment" defaultValue="Investment">
+                <option value="Investment">
                   Expense
                 </option>{" "}
-                <option value="Investment" defaultValue="Investment">
+                <option value="Investment">
                   Savings
                 </option>
               </select>
