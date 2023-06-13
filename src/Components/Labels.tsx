@@ -1,12 +1,8 @@
 import { FC } from "react";
 import LabelComponents from "./LabelComponents";
+import { objects } from "../Service/interfaces";
 
 const Labels: FC = () => {
-  interface objects {
-    type: string;
-    color: string;
-    percent: number;
-  }
   const obj: Array<objects> = [
     {
       type: "savings",
@@ -27,11 +23,10 @@ const Labels: FC = () => {
   return (
     <div className="">
       {obj.map((value, i: number) => (
-        <LabelComponents key={i} data={value}/>
+        <LabelComponents key={i} data={value} />
       ))}
     </div>
   );
 };
 
 export default Labels;
-
