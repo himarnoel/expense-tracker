@@ -11,7 +11,7 @@ const Labels: FC = () => {
     },
     {
       type: "Investments",
-      color: "#f9c74f",
+      color: "#9d4eddf",
       percent: 20,
     },
     {

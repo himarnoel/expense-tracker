@@ -19,13 +19,22 @@ const Form: FC<FormProps> = () => {
                 <option value="Investment" defaultValue="Investment">
                   Investment
                 </option>
-                <option value="Investment">
-                  Expense
-                </option>{" "}
-                <option value="Investment">
-                  Savings
-                </option>
+                <option value="Expense">Expense</option>{" "}
+                <option value="Savings">Savings</option>
               </select>
+              <div className="input-group">
+                {" "}
+                <input
+                  type="text"
+                  placeholder="amount"
+                  className="form-input"
+                />
+              </div>
+              <div className="submit-btn">
+                <button className="border py-2 text-white bg-indigo-500 w-full">
+                  Make Transaction
+                </button>
+              </div>
             </div>
           </div>
         </form>

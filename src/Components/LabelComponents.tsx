@@ -8,7 +8,7 @@ interface LabelComponentsProps {
 const LabelComponents: FC<LabelComponentsProps> = ({ data }) => {
   if (!data) return <div></div>;
   return (
-    <div className="labels flex justify-between">
+    <div className="labels flex justify-between mt-2">
       <div className="flex gap-2">
         <div
           className={`w-2 h-3 rounded py-3 ${
