@@ -3,7 +3,8 @@ import { FC } from "react";
 interface FormProps {}
 
 const Form: FC<FormProps> = () => {
-  return <></>;
+  return <>
+  form</>;
 };
 
 export default Form;
