@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import Graph from "./Components/Graph";
+import Form from "./Components/Form";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -18,6 +19,7 @@ function App() {
           {/* Chart */}
           <Graph />
           {/* Form */}
+          <Form />
         </div>
       </div>
     </div>
