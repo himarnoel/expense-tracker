@@ -1,4 +1,5 @@
 import { FC } from "react";
+import LabelComponents from "./LabelComponents";
 
 const Labels: FC = () => {
   interface objects {
@@ -26,7 +27,7 @@ const Labels: FC = () => {
   return (
     <div className="">
       {obj.map((value, i: number) => (
-        <LabelCompents key={i} data={value}/>
+        <LabelComponents key={i} data={value}/>
       ))}
     </div>
   );
