@@ -16,7 +16,7 @@ const Form: React.FC<FormProps> = () => {
       values: values.expenses ? values : {},
       errors: !values.expenses
         ? {
-            expenses: { 
+            expenses: {
               type: "required",
               message: "This is required.",
             },
