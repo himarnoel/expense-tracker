@@ -1,8 +1,8 @@
 import { ArcElement, Chart } from "chart.js";
-import React, { FC } from "react";
+import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import Labels from "./Labels";
-const Graph: FC = () => {
+const Graph: React.FC = () => {
   Chart.register(ArcElement);
   const config = {
     data: {

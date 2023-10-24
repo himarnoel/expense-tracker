@@ -1,11 +1,11 @@
-import { useState } from "react";
+
 
 import "./App.css";
 import Graph from "./Components/Graph";
 import Form from "./Components/Form";
 
 function App() {
-  const [count, setCount] = useState<number>(0);
+
 
   return (
     <div className="App">

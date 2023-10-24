@@ -11,9 +11,8 @@ const LabelComponents: FC<LabelComponentsProps> = ({ data }) => {
     <div className="labels flex justify-between mt-2">
       <div className="flex gap-2">
         <div
-          className={`w-2 h-3 rounded py-3 ${
-            `bg-[${data.color}]` ?? "bg-[#f9c74f]"
-          }`}
+          style={{ backgroundColor: data.color }}
+          className={`w-2 h-3 rounded py-3 `}
         ></div>
         <h3>{data.type ?? ""}</h3>
       </div>

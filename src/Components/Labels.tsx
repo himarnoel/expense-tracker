@@ -11,12 +11,12 @@ const Labels: FC = () => {
     },
     {
       type: "Investments",
-      color: "#9d4eddf",
+      color: "#ff6384",
       percent: 20,
     },
     {
       type: "savings",
-      color: "#f9c74f",
+      color: "#36a2eb",
       percent: 10,
     },
   ];

@@ -1,9 +1,10 @@
-import { FC } from "react";
+import React from "react";
 import { useForm, Resolver } from "react-hook-form";
+import List from "./List";
 
 interface FormProps {}
 
-const Form: FC<FormProps> = () => {
+const Form: React.FC<FormProps> = () => {
   type FormValues = {
     expenses: string;
     type: string;
@@ -15,7 +16,7 @@ const Form: FC<FormProps> = () => {
       values: values.expenses ? values : {},
       errors: !values.expenses
         ? {
-            expenses: {
+            expenses: { 
               type: "required",
               message: "This is required.",
             },
@@ -34,7 +35,6 @@ const Form: FC<FormProps> = () => {
     <>
       <div className="form max-w-sm mx-auto w-96">
         <h1 className="font-bold pb-4 text-xl">Transaction</h1>
-        {}
         <form action="" id="form" onSubmit={onSubmit}>
           <div className="grid gap-4">
             <div className="input-group">
@@ -68,6 +68,7 @@ const Form: FC<FormProps> = () => {
             </div>
           </div>
         </form>
+        <List />
       </div>
     </>
   );

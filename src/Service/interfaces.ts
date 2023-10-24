@@ -3,3 +3,9 @@ export interface objects {
     color: string;
     percent: number;
   }
+
+
+  export interface Listfile{
+   name: string;
+    color: string;
+  }
