@@ -1,8 +1,6 @@
 import { FC } from "react";
 import { Listfile } from "../Service/interfaces";
 
-
-
 const List = () => {
   const obj: Array<Listfile> = [
     {
@@ -23,20 +21,20 @@ const List = () => {
       <h1 className="py-4 text-md text-xl">History</h1>
 
       {obj.map((v, i) => (
-        <Transaction key={i} category={v.name} />
+        <Transaction key={i} color={v.color} name={v.name}/>
       ))}
     </div>
   );
 };
-interface Transactionprops {
-  category: string;
-}
 
-const Transaction: FC<Transactionprops> = ({ category }) => {
+const Transaction: FC<Listfile> = (category) => {
   if (!category) return null;
   return (
-    <div className="flex justify-center items-center bg-gray-50 py-3 rounded-r">
-      <span className="block w-full">{category ?? ""}</span>
+    <div
+      className="flex justify-center items-center bg-gray-50 py-3 rounded-r"
+      style={{ borderRight: `8px solid ${category.color}` }}
+    >
+      <span className="block w-full">{category.name ?? ""}</span>
     </div>
   );
 };
