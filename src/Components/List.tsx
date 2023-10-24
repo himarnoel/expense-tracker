@@ -34,6 +34,7 @@ const Transaction: FC<Listfile> = (category) => {
       className="flex justify-center items-center bg-gray-50 py-3 rounded-r"
       style={{ borderRight: `8px solid ${category.color}` }}
     >
+        <button className="px-3"></button>
       <span className="block w-full">{category.name ?? ""}</span>
     </div>
   );
