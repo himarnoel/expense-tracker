@@ -1,5 +1,5 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'
-const baseUri="http://localhost:8080"
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+const baseUri="http://localhost:9000"
 export const apiSlice=createApi({
     baseQuery:fetchBaseQuery({baseUrl:baseUri}),
     endpoints:builder=>({
@@ -9,4 +9,5 @@ export const apiSlice=createApi({
     })
 })
 
-export default apiSlice;
+export  default apiSlice;
+

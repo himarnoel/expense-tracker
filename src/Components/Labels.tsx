@@ -1,6 +1,7 @@
 import { FC } from "react";
 import LabelComponents from "./LabelComponents";
 import { objects } from "../Service/interfaces";
+import { default as api } from "../store/apiSlice";
 
 const Labels: FC = () => {
   const obj: Array<objects> = [
@@ -20,6 +21,8 @@ const Labels: FC = () => {
       percent: 10,
     },
   ];
+  console.log(api.useGetCategoriesQuery("bulbasaur"));
+
   return (
     <div className="">
       {obj.map((value, i: number) => (
