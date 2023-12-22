@@ -34,7 +34,7 @@ const Form: React.FC<FormProps> = () => {
   return (
     <>
       <div className="form max-w-sm mx-auto w-96">
-        <h1 className="font-bold pb-4 text-xl">Transaction</h1>
+        <h1 className="font-bold pb-4 text-2xl">Transaction</h1>
         <form action="" id="form" onSubmit={onSubmit}>
           <div className="grid gap-4">
             <div className="input-group">
