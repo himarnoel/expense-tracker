@@ -8,3 +8,5 @@ export const apiSlice=createApi({
         })
     })
 })
+
+export default apiSlice;
