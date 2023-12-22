@@ -8,10 +8,14 @@ const  initialState:initialstates={
     categories:[],
     transaction:[]
 }
-export const store=createSlice({
+export const expenseSlice=createSlice({
     name:"expense",
     initialState,
     reducers:{
-        getTransactions:(state)=>{}
+        getTransactions:(state:any)=>{}
     }
 })
+
+export const {getTransactions}=expenseSlice.actions
+
+export default expenseSlice.reducer;
