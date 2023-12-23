@@ -1,29 +1,24 @@
 import { FC } from "react";
 import { Listfile } from "../Service/interfaces";
 import { MdDelete } from "react-icons/md";
-
+import { default as api } from "../store/apiSlice";
 const List = () => {
-  const obj: Array<Listfile> = [
-    {
-      name: "savings",
-      color: "#f9c74f",
-    },
-    {
-      name: "Investment",
-      color: "#ff6384",
-    },
-    {
-      name: "Expense",
-      color: "#36a2eb",
-    },
-  ];
+  const info = api.useGetLabelsQuery("");
+
+  let Transactions;
+  if (info.isFetching) {
+    Transactions = <div>....Fetching</div>;
+  } else if (info.isSuccess) {
+    Transactions = info.data.map((v: any, i: any) => (
+      <Transaction key={i} color={v.color} name={v.name} />
+    ));
+  } else if (info.isError) {
+    Transactions = <div>An error occurred</div>;
+  }
   return (
     <div className="flex flex-col py-6 gap-3">
       <h1 className="py-4 text-md text-xl">History</h1>
-
-      {obj.map((v, i) => (
-        <Transaction key={i} color={v.color} name={v.name} />
-      ))}
+      {Transactions}
     </div>
   );
 };

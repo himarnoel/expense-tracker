@@ -2,7 +2,7 @@ import { FC } from "react";
 import { objects } from "../Service/interfaces";
 
 interface LabelComponentsProps {
-  data: objects;
+  data: object;
 }
 
 const LabelComponents: FC<LabelComponentsProps> = ({ data }) => {

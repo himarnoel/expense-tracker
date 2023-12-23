@@ -1,22 +1,22 @@
 import React from "react";
 import { useForm, Resolver } from "react-hook-form";
 import List from "./List";
-
+import { default as api } from "../store/apiSlice";
 interface FormProps {}
 
 const Form: React.FC<FormProps> = () => {
   type FormValues = {
-    expenses: string;
+    name: string;
     type: string;
     amout: number;
   };
 
   const resolver: Resolver<FormValues> = async (values) => {
     return {
-      values: values.expenses ? values : {},
-      errors: !values.expenses
+      values: values.name ? values : {},
+      errors: !values.name
         ? {
-            expenses: {
+            name: {
               type: "required",
               message: "This is required.",
             },
@@ -28,9 +28,20 @@ const Form: React.FC<FormProps> = () => {
   const {
     register,
     handleSubmit,
+    resetField,
     formState: { errors },
   } = useForm<FormValues>({ resolver });
-  const onSubmit = handleSubmit((data) => console.log(data));
+
+  const [addTransaction] = api.useAddNewTransactionMutation();
+
+  const onSubmit = handleSubmit(async (data) => {
+    // console.log(data);
+
+    if (!data) return {};
+    await addTransaction(data).unwrap();
+    resetField("name"), resetField("amout");
+  });
+
   return (
     <>
       <div className="form max-w-sm mx-auto w-96">
@@ -42,7 +53,7 @@ const Form: React.FC<FormProps> = () => {
                 type="text"
                 placeholder="Salary, House Rent, SIP"
                 className="form-input"
-                {...register("expenses")}
+                {...register("name")}
               />
               <select id="" className="form-input" {...register("type")}>
                 <option value="Investment" defaultValue="Investment">
