@@ -2,16 +2,13 @@ import React from "react";
 import { useForm, Resolver } from "react-hook-form";
 import List from "./List";
 import { default as api } from "../store/apiSlice";
+import { createTransaction } from "../Service/interfaces";
 interface FormProps {}
 
 const Form: React.FC<FormProps> = () => {
-  type FormValues = {
-    name: string;
-    type: string;
-    amout: number;
-  };
 
-  const resolver: Resolver<FormValues> = async (values) => {
+
+  const resolver: Resolver<createTransaction> = async (values) => {
     return {
       values: values.name ? values : {},
       errors: !values.name
@@ -30,7 +27,7 @@ const Form: React.FC<FormProps> = () => {
     handleSubmit,
     resetField,
     formState: { errors },
-  } = useForm<FormValues>({ resolver });
+  } = useForm<createTransaction>({ resolver });
 
   const [addTransaction] = api.useAddNewTransactionMutation();
 

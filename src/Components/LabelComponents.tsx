@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { objects } from "../Service/interfaces";
+import { categoriesInterface } from "../Service/interfaces";
 
 interface LabelComponentsProps {
-  data: object;
+  data: categoriesInterface;
 }
 
 const LabelComponents: FC<LabelComponentsProps> = ({ data }) => {
